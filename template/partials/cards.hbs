@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    {{#if this.title}}
+    <h1 class="fw-bold">{{this.title}} Places</h1>
+    {{/if}}
+    {{#if this.search}}
+    <h1 class="fw-bold">Search "{{this.search}}"</h1>
+    {{/if}}
+    <hr>
+    <div class="cards mt-5 mb-5">
+        {{#each this.data}}
+        <div class="card" style="width: 18rem;">
+            <a href={{concat "/place/" this.slug}}>
+                <img class="card-img-top" src={{this.image}} alt="Card image cap" width="300">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">{{this.name}}</h5>
+                    <p class="card-text">
+                        <i class="fa-solid fa-location-dot"></i>
+                        {{this.location}}
+                    </p>
+                    <a href={{concat "/place/" this.slug}} class="btn btn-primary mt-3">Checkout</a>
+                </div>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+</div>
+</div>

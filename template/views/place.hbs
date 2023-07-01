@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>basehead title=this.place.name}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/place.css">
+</head>
+
+<body>
+    {{>navbar}}
+    <div class="container">
+        <div class="image">
+            <img src={{this.place.image}} alt={{this.place.name}} class="main_img">
+        </div>
+        <div class="heading">
+            <h1 class="title">{{this.place.name}}</h1>
+            <p class="mt-2">
+                <i class="fa-solid fa-location-dot"></i>
+                {{this.place.location}}
+            </p>
+            {{!-- <p class="mt-2">
+                <i class="fa-solid fa-map-pin"></i>
+                <a href={{this.place.maps_link}}>Google Maps</a>
+            </p> --}}
+            <a href={{this.place.maps_link}}><button class="btn">Maps</button></a>
+        </div>
+        <hr>
+        <div class="description mb-5">
+            <p>{{this.place.description}}</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum category {
+  Historical
+  Temple
+  Beach
+  Waterfalls
+  Wildlife
+  Season
+}
+
+model places {
+  id          Int      @id @default(autoincrement())
+  name        String   @db.VarChar(255)
+  category    category
+  image       String
+  description String
+  location    String   @db.VarChar(255) //delhi,india
+  maps_link   String?  @db.VarChar(255) //google maps link
+  slug        String   @unique @db.VarChar(255) // place/taj-mahal
+}

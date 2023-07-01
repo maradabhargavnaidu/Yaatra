@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap');
+.header {
+    width: 100%;
+    min-height: 60vh;
+    color: white;
+    /* background-color: #b3ffae; */
+    background-image: linear-gradient(to right, #d397fa, #8364e8);
+    font-family: 'Titillium Web', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+.heading {
+    font-size: 3.5rem;
+    text-transform: capitalize;
+}
+.search_box {
+    width: 40rem;
+    border: none;
+    border-radius: 0.4rem;
+    padding: 1rem;
+}
+.card-img-top {
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+}
+.card-title {
+    text-transform: capitalize;
+}
+a,
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+}
+.cards .card {
+    border: none;
+    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+}
+@media (max-width: 575.98px) {
+    .cards {
+        place-items: center;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .heading {
+        font-size: 2rem;
+    }
+    .search_box {
+        width: 90vw;
+    }
+}
