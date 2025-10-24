@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Yaatra
+  labels:
+    app: Yaatra
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Yaatra
+  template:
+    metadata:
+      labels:
+        app: Yaatra
+    spec:
+      containers:
+        - name: Yaatra
+          image: maradabhargavnaidu/Yaatra:1
+          volumeMounts:
+            - name: secret-volume
+              mountPath: "/etc/secrets"
+              readOnly: true
+          ports:
+            - containerPort: 80
+      volumes:
+       - name: secret-volume
+         secret:
+           secretName: db-secret
