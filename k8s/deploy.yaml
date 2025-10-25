@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Yaatra
+  name: yaatra
   labels:
-    app: Yaatra
+    app: yaatra
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Yaatra
+      app: yaatra
   template:
     metadata:
       labels:
-        app: Yaatra
+        app: yaatra
     spec:
       containers:
-        - name: Yaatra
-          image: maradabhargavnaidu/Yaatra:1
+        - name: yaatra
+          image: maradabhargavnaidu/yaatra:1
           env:
             - name: DATABASE_URL
               valueFrom:
