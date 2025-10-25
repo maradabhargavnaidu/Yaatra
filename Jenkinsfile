@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Cloning') {
             steps {
-                git 'https://github.com/maradabhargavnaidu/yaatra'
+                git 'https://github.com/maradabhargavnaidu/Yaatra'
             }
         }
         stage('Installing'){
