@@ -5,12 +5,12 @@ pipeline {
         nodejs "node"
     }
     environment{
-        DOCKER_IMAGE = "maradabhargavnaidu/Yaatra"
+        DOCKER_IMAGE = "maradabhargavnaidu/yaatra"
     }
     stages {
         stage('Cloning') {
             steps {
-                git 'https://github.com/maradabhargavnaidu/Yaatra'
+                git 'https://github.com/maradabhargavnaidu/yaatra'
             }
         }
         stage('Installing'){
@@ -38,7 +38,7 @@ pipeline {
                 withCredentials([file(credentialsId:'aks-config',variable:'KUBECONFIG')]){
                     sh '''
                         kubectl config use-context clusterone
-                        kubectl set image deployment/Yaatra Yaatra=$DOCKER_IMAGE:$BUILD_NUMBER --namespace=default
+                        kubectl set image deployment/yaatra yaatra=$DOCKER_IMAGE:$BUILD_NUMBER --namespace=default
                     '''
                 }
             }
