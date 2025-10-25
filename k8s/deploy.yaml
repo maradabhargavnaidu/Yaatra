@@ -17,6 +17,12 @@ spec:
       containers:
         - name: Yaatra
           image: maradabhargavnaidu/Yaatra:1
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: DATABASE_URL
           volumeMounts:
             - name: secret-volume
               mountPath: "/etc/secrets"
