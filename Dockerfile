@@ -1,12 +1,9 @@
-FROM node:18-alpine AS build
+FROM node:18
+RUN apt-get update && apt-get install openssl -y
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN npm run build
-
-FROM node:18-alpine
-WORKDIR /app
-COPY --from=build /app /app
+RUN npx prisma generate
 EXPOSE 3000
-CMD ["node", "app.js"]
+CMD ["node", "index.js"]
