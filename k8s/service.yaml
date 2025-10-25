@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: Yaatra-service
+  name: yaatra-service
 spec:
   type: LoadBalancer
   selector:
-    app: Yaatra
+    app: yaatra
   ports:
     - protocol: TCP
       port: 80
